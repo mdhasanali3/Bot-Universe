@@ -1,0 +1,16 @@
+version: "1.0.0"
+services:
+
+  medibot-front:
+    container_name: medibot-front
+    image: medibot-front
+    build: ./front/.
+    ports:
+      - 5173:5173
+
+  bot-service-medibot:
+    container_name: bot-service-medibot
+    image: bot-service-medibot
+    build: ./medi-back/.
+    ports:
+      - 5000:5000

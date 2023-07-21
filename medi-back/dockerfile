@@ -1,0 +1,14 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+# Set the working directory in the container to /app
+WORKDIR /app
+
+# Add the current directory contents into the container at /app
+ADD . /app
+
+# If you have any Python dependencies, install them
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Navigate to src directory and Run main.py when the container launches
+CMD ["python", "app.py"]
